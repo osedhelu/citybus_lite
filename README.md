@@ -13,6 +13,7 @@ persistentes utilizando almacenamiento local (`SharedPreferences`).
 - [Ejecución de la aplicación](#ejecución-de-la-aplicación)
 - [Estructura de archivos clave](#estructura-de-archivos-clave)
 - [Diagramas de flujo](#diagramas-de-flujo)
+- [Pruebas automatizadas](#pruebas-automatizadas)
 - [Distribución y entrega](#distribución-y-entrega)
 - [Próximos pasos sugeridos](#próximos-pasos-sugeridos)
 
@@ -160,6 +161,38 @@ sequenceDiagram
   RoutesProvider->>RouteDetailRoute: Ruta actualizada
   Usuario->>GoRouter: Presiona volver
   GoRouter-->>HomeRoute: Regresa al listado (estado actualizado)
+```
+
+## Pruebas automatizadas
+
+El proyecto incluye una batería de pruebas unitarias y de widgets para asegurar el
+comportamiento clave:
+
+- `test/features/home/presentation/providers/routes_provider_test.dart`  
+  Verifica `RoutesProvider` usando un repositorio falso:
+  - `resetData` carga rutas desde el datasource.
+  - `searchRoutes` filtra correctamente por código/nombre.
+  - `markAsFavorite` y `unmarkAsFavorite` actualizan el flag `isFavorite`.
+
+- `test/features/home/presentation/screens/home_route_test.dart`  
+  Usa un `InterfaceHomeProvider` falso para comprobar:
+  - Render del listado inicial con datos mock.
+  - Filtrado en vivo mediante el buscador.
+  - Toggle del estado favorito desde la lista.
+
+- `test/features/home/presentation/screens/route_detail_route_test.dart`  
+  Valida la pantalla de detalle con un provider falso:
+  - Se muestran todos los datos de la ruta seleccionada.
+  - El botón de favorito alterna entre marcado y desmarcado.
+
+- `test/widget_test.dart`  
+  Smoke test que asegura que `CitybusLiteApp` se construye correctamente dentro de
+  un `ProviderScope`.
+
+Para ejecutar toda la suite:
+
+```bash
+flutter test
 ```
 
 ## Distribución y entrega
