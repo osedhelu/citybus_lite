@@ -126,17 +126,17 @@ lib/
 flowchart TD
   A[HomeRoute initState] --> B[RoutesProvider.resetData]
   B --> C{SharedPreferences contiene favoritos?}
-  C -- Sí --> D[Marcar rutas con isFavorite=true]
-  C -- No --> E[Retornar rutas solo desde JSON]
+  C -->|Sí| D[Marcar rutas con isFavorite true]
+  C -->|No| E[Retornar rutas solo desde JSON]
   D --> F[ListView con tarjetas]
   E --> F
   F --> G[Usuario pulsa estrella]
-  G --> H{isFavorite?}
-  H -- Sí --> I[unmarkAsFavorite(routeId)]
-  H -- No --> J[markAsFavorite(routeId)]
+  G --> H{Ruta es favorita?}
+  H -->|Sí| I[Eliminar favorito]
+  H -->|No| J[Registrar favorito]
   I --> K[SharedPreferences elimina ID]
   J --> L[SharedPreferences guarda ID]
-  K --> M[RoutesProvider._refreshRoute(routeId)]
+  K --> M[RoutesProvider refresca ruta]
   L --> M
   M --> F
 ```
