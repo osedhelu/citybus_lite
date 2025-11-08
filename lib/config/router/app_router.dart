@@ -24,10 +24,10 @@ final List<_RouteConfig> _routeConfigs = [
     path: HomeRoute.path,
     name: HomeRoute.name,
     builder: (context, state) => RouterAwareLayout(child: const HomeRoute()),
-    trailingBuilder: (context) => IconButton(
-      icon: const Icon(Icons.settings),
-      onPressed: () => context.go(SettingsRoute.path),
-    ),
+    // trailingBuilder: (context) => IconButton(
+    //   icon: const Icon(Icons.settings),
+    //   onPressed: () => context.go(SettingsRoute.path),
+    // ),
   ),
   _RouteConfig(
     path: RouteDetailRoute.path,
@@ -36,11 +36,9 @@ final List<_RouteConfig> _routeConfigs = [
       final routeIdParam = state.pathParameters['id'];
       final routeId = int.tryParse(routeIdParam ?? '');
 
-      final child = (routeId == null)
+      return (routeId == null)
           ? const RouteDetailNotFoundView()
-          : RouteDetailRoute(routeId: routeId);
-
-      return RouterAwareLayout(child: child);
+          : RouterAwareLayout(child: RouteDetailRoute(routeId: routeId));
     },
     leadingBuilder: (context) => IconButton(
       icon: const Icon(Icons.arrow_back),

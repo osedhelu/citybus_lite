@@ -99,30 +99,22 @@ class _HomeRouteState extends ConsumerState<HomeRoute> {
     final body = _isLoading
         ? const _RoutesSkeleton()
         : _errorMessage.isNotEmpty
-            ? _ErrorState(
-                message: _errorMessage,
-                onRetry: _loadRoutes,
-              )
-            : _routes.isEmpty
-                ? const _EmptyState()
-                : ListView.separated(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 24,
-                    ),
-                    itemCount: _routes.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 16),
-                    itemBuilder: (context, index) {
-                      final route = _routes[index];
-                      return _RouteCard(
-                        route: route,
-                        onFavoriteToggle: () => _toggleFavorite(route),
-                        onTap: () => context.go(
-                          RouteDetailRoute.pathWithId(route.id),
-                        ),
-                      );
-                    },
-                  );
+        ? _ErrorState(message: _errorMessage, onRetry: _loadRoutes)
+        : _routes.isEmpty
+        ? const _EmptyState()
+        : ListView.separated(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            itemCount: _routes.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 16),
+            itemBuilder: (context, index) {
+              final route = _routes[index];
+              return _RouteCard(
+                route: route,
+                onFavoriteToggle: () => _toggleFavorite(route),
+                onTap: () => context.go(RouteDetailRoute.pathWithId(route.id)),
+              );
+            },
+          );
 
     return SafeArea(
       child: Column(
@@ -171,10 +163,7 @@ class _HomeRouteState extends ConsumerState<HomeRoute> {
 }
 
 class _SearchField extends StatelessWidget {
-  const _SearchField({
-    required this.controller,
-    required this.onClear,
-  });
+  const _SearchField({required this.controller, required this.onClear});
 
   final TextEditingController controller;
   final VoidCallback onClear;
@@ -195,10 +184,7 @@ class _SearchField extends StatelessWidget {
         prefixIcon: const Icon(Icons.search),
         suffixIcon: controller.text.isEmpty
             ? null
-            : IconButton(
-                icon: const Icon(Icons.close),
-                onPressed: onClear,
-              ),
+            : IconButton(icon: const Icon(Icons.close), onPressed: onClear),
         filled: true,
         fillColor: theme.colorScheme.surfaceVariant.withOpacity(0.4),
         border: OutlineInputBorder(
@@ -340,8 +326,7 @@ class _RoutesSkeleton extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 16),
           child: Shimmer.fromColors(
             baseColor: theme.colorScheme.surfaceVariant.withOpacity(0.6),
-            highlightColor:
-                theme.colorScheme.surfaceVariant.withOpacity(0.2),
+            highlightColor: theme.colorScheme.surfaceVariant.withOpacity(0.2),
             child: Container(
               height: 140,
               decoration: BoxDecoration(
@@ -400,10 +385,7 @@ class _EmptyState extends StatelessWidget {
 }
 
 class _ErrorState extends StatelessWidget {
-  const _ErrorState({
-    required this.message,
-    required this.onRetry,
-  });
+  const _ErrorState({required this.message, required this.onRetry});
 
   final String message;
   final VoidCallback onRetry;
