@@ -60,7 +60,7 @@ El provider `RoutesProvider` centraliza:
 
 1. **Clonar el repositorio**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/osedhelu/citybus_lite
    cd citybus_lite
    ```
 
