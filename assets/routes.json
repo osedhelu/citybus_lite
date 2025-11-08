@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "code": "CB090",
+        "name": "Centro - Norte",
+        "from": "Terminal Centro",
+        "to": "Parque Norte",
+        "description": "Ruta troncal con paradas principales.",
+        "stops": [
+            "Central",
+            "Av 10",
+            "Museo",
+            "Parque Norte"
+        ]
+    },
+    {
+        "id": 2,
+        "code": "CB120",
+        "name": "Occidente - Sur",
+        "from": "Portal Occidente",
+        "to": "Universidad Sur",
+        "description": "Ruta alimentadora.",
+        "stops": [
+            "Portal Occidente",
+            "Av 80",
+            "Estadio",
+            "Universidad Sur"
+        ]
+    }
+]

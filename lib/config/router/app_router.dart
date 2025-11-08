@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:citybus_lite/features/home/presentation/screens/home_screen.dart';
+import 'package:citybus_lite/features/home/presentation/screens/route_detail_screen.dart';
 import 'package:citybus_lite/features/settings/presentation/screens/settings_screen.dart';
 
 import 'router_aware_layout.dart';
@@ -26,6 +27,24 @@ final List<_RouteConfig> _routeConfigs = [
     trailingBuilder: (context) => IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () => context.go(SettingsRoute.path),
+    ),
+  ),
+  _RouteConfig(
+    path: RouteDetailRoute.path,
+    name: RouteDetailRoute.name,
+    builder: (context, state) {
+      final routeIdParam = state.pathParameters['id'];
+      final routeId = int.tryParse(routeIdParam ?? '');
+
+      final child = (routeId == null)
+          ? const RouteDetailNotFoundView()
+          : RouteDetailRoute(routeId: routeId);
+
+      return RouterAwareLayout(child: child);
+    },
+    leadingBuilder: (context) => IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () => context.go(HomeRoute.path),
     ),
   ),
   _RouteConfig(
