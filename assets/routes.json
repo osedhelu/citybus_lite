@@ -26,5 +26,285 @@
             "Estadio",
             "Universidad Sur"
         ]
+    },
+    {
+        "id": 3,
+        "code": "CB130",
+        "name": "Centro - Aeropuerto",
+        "from": "Terminal Centro",
+        "to": "Aeropuerto Internacional",
+        "description": "Ruta directa entre el centro y el aeropuerto con pocas paradas.",
+        "stops": [
+            "Central",
+            "Av 12",
+            "Zona Hotelera",
+            "Aeropuerto Internacional"
+        ]
+    },
+    {
+        "id": 4,
+        "code": "CB145",
+        "name": "Norte - Universidad",
+        "from": "Parque Norte",
+        "to": "Campus Universitario",
+        "description": "Ruta especial para estudiantes con servicio en horas pico.",
+        "stops": [
+            "Parque Norte",
+            "Biblioteca Pública",
+            "Barrio Estudiantes",
+            "Campus Universitario"
+        ]
+    },
+    {
+        "id": 5,
+        "code": "CB160",
+        "name": "Centro - Hospital",
+        "from": "Terminal Centro",
+        "to": "Hospital General",
+        "description": "Ruta con acceso prioritario a zonas hospitalarias.",
+        "stops": [
+            "Central",
+            "Av 5",
+            "Clínica Santa María",
+            "Hospital General"
+        ]
+    },
+    {
+        "id": 6,
+        "code": "CB175",
+        "name": "Sur - Empresarial",
+        "from": "Universidad Sur",
+        "to": "Distrito Empresarial",
+        "description": "Ruta con alta frecuencia hacia la zona financiera.",
+        "stops": [
+            "Universidad Sur",
+            "Parque Industrial",
+            "Centro de Convenciones",
+            "Distrito Empresarial"
+        ]
+    },
+    {
+        "id": 7,
+        "code": "CB188",
+        "name": "Occidente - Centro Histórico",
+        "from": "Portal Occidente",
+        "to": "Centro Histórico",
+        "description": "Ruta turística con anuncios sobre puntos de interés.",
+        "stops": [
+            "Portal Occidente",
+            "Mirador Oeste",
+            "Mercado Artesanal",
+            "Centro Histórico"
+        ]
+    },
+    {
+        "id": 8,
+        "code": "CB200",
+        "name": "Centro - Zona Franca",
+        "from": "Terminal Centro",
+        "to": "Zona Franca",
+        "description": "Ruta exclusiva para trabajadores de la zona franca.",
+        "stops": [
+            "Central",
+            "Av 18",
+            "Parque Logístico",
+            "Zona Franca"
+        ]
+    },
+    {
+        "id": 9,
+        "code": "CB215",
+        "name": "Norte - Jardines",
+        "from": "Parque Norte",
+        "to": "Residencial Jardines",
+        "description": "Ruta residencial con servicio cada 20 minutos.",
+        "stops": [
+            "Parque Norte",
+            "Avenida de las Flores",
+            "Parque Infantil",
+            "Residencial Jardines"
+        ]
+    },
+    {
+        "id": 10,
+        "code": "CB230",
+        "name": "Sur - Terminal de Carga",
+        "from": "Universidad Sur",
+        "to": "Terminal de Carga",
+        "description": "Ruta que conecta con la terminal de carga pesada.",
+        "stops": [
+            "Universidad Sur",
+            "Av 60",
+            "Parque Logístico Sur",
+            "Terminal de Carga"
+        ]
+    },
+    {
+        "id": 11,
+        "code": "CB245",
+        "name": "Centro - Ciudadela",
+        "from": "Terminal Centro",
+        "to": "Ciudadela del Sol",
+        "description": "Ruta mixta con paradas en zonas residenciales y comerciales.",
+        "stops": [
+            "Central",
+            "Plaza Mayor",
+            "Parque de la Juventud",
+            "Ciudadela del Sol"
+        ]
+    },
+    {
+        "id": 12,
+        "code": "CB260",
+        "name": "Occidente - Tecnoparque",
+        "from": "Portal Occidente",
+        "to": "Tecnoparque",
+        "description": "Ruta destinada a empleados del parque tecnológico.",
+        "stops": [
+            "Portal Occidente",
+            "Av 40",
+            "Centro de Innovación",
+            "Tecnoparque"
+        ]
+    },
+    {
+        "id": 13,
+        "code": "CB275",
+        "name": "Centro - Puerto",
+        "from": "Terminal Centro",
+        "to": "Puerto Fluvial",
+        "description": "Ruta que conecta el centro con el puerto fluvial.",
+        "stops": [
+            "Central",
+            "Aduana Vieja",
+            "Mercado de Pescadores",
+            "Puerto Fluvial"
+        ]
+    },
+    {
+        "id": 14,
+        "code": "CB290",
+        "name": "Norte - Mirador",
+        "from": "Parque Norte",
+        "to": "Mirador Alto",
+        "description": "Ruta panorámica con vistas a la ciudad.",
+        "stops": [
+            "Parque Norte",
+            "Escalinatas",
+            "Bosque Alto",
+            "Mirador Alto"
+        ]
+    },
+    {
+        "id": 15,
+        "code": "CB305",
+        "name": "Sur - Parque Acuático",
+        "from": "Universidad Sur",
+        "to": "Parque Acuático",
+        "description": "Ruta de temporada hacia el parque acuático.",
+        "stops": [
+            "Universidad Sur",
+            "Av 70",
+            "Zona Recreativa",
+            "Parque Acuático"
+        ]
+    },
+    {
+        "id": 16,
+        "code": "CB320",
+        "name": "Centro - Museo de Arte",
+        "from": "Terminal Centro",
+        "to": "Museo de Arte Moderno",
+        "description": "Ruta cultural con paradas en museos y galerías.",
+        "stops": [
+            "Central",
+            "Galería Norte",
+            "Plaza de los Artistas",
+            "Museo de Arte Moderno"
+        ]
+    },
+    {
+        "id": 17,
+        "code": "CB335",
+        "name": "Occidente - Parque Tecnológico",
+        "from": "Portal Occidente",
+        "to": "Parque Tecnológico",
+        "description": "Ruta rápida con carril exclusivo en horas laborales.",
+        "stops": [
+            "Portal Occidente",
+            "Av 48",
+            "Centro Empresarial",
+            "Parque Tecnológico"
+        ]
+    },
+    {
+        "id": 18,
+        "code": "CB350",
+        "name": "Norte - Reserva Natural",
+        "from": "Parque Norte",
+        "to": "Reserva Natural",
+        "description": "Ruta ecológica hacia la reserva natural de la ciudad.",
+        "stops": [
+            "Parque Norte",
+            "Centro Ambiental",
+            "Sendero Verde",
+            "Reserva Natural"
+        ]
+    },
+    {
+        "id": 19,
+        "code": "CB365",
+        "name": "Centro - Estadio",
+        "from": "Terminal Centro",
+        "to": "Estadio Metropolitano",
+        "description": "Ruta especial en días de eventos deportivos.",
+        "stops": [
+            "Central",
+            "Av 15",
+            "Fan Zone",
+            "Estadio Metropolitano"
+        ]
+    },
+    {
+        "id": 20,
+        "code": "CB380",
+        "name": "Sur - Parque Industrial",
+        "from": "Universidad Sur",
+        "to": "Parque Industrial",
+        "description": "Ruta para operarios del parque industrial sur.",
+        "stops": [
+            "Universidad Sur",
+            "Zona Obrera",
+            "Planta Central",
+            "Parque Industrial"
+        ]
+    },
+    {
+        "id": 21,
+        "code": "CB395",
+        "name": "Occidente - Laguna",
+        "from": "Portal Occidente",
+        "to": "Laguna Esmeralda",
+        "description": "Ruta turística hacia la laguna Esmeralda.",
+        "stops": [
+            "Portal Occidente",
+            "Mirador del Lago",
+            "Centro de Visitantes",
+            "Laguna Esmeralda"
+        ]
+    },
+    {
+        "id": 22,
+        "code": "CB410",
+        "name": "Centro - Parque Tecnológico",
+        "from": "Terminal Centro",
+        "to": "Parque Tecnológico",
+        "description": "Ruta directa con parada en zonas de coworking.",
+        "stops": [
+            "Central",
+            "Coworking Central",
+            "Campus Innovador",
+            "Parque Tecnológico"
+        ]
     }
 ]
