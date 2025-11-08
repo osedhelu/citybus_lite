@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 class _FakeRoutesRepository implements RoutesRepository {
   _FakeRoutesRepository(List<BusRouteEntity> routes)
-      : _routes = List<BusRouteEntity>.from(routes);
+    : _routes = List<BusRouteEntity>.from(routes);
 
   final List<BusRouteEntity> _routes;
 
@@ -21,10 +21,11 @@ class _FakeRoutesRepository implements RoutesRepository {
 
   @override
   Future<BusRouteEntity?> fetchRouteById(int id) async {
-    return _routes.firstWhere(
-      (route) => route.id == id,
-      orElse: () => null,
-    );
+    final index = _routes.indexWhere((route) => route.id == id);
+    if (index == -1) {
+      return null;
+    }
+    return _routes[index];
   }
 
   @override
@@ -49,6 +50,8 @@ class _FakeRoutesRepository implements RoutesRepository {
 }
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   late RoutesProvider provider;
   late _FakeRoutesRepository repository;
   late List<BusRouteEntity> sampleRoutes;
@@ -71,7 +74,12 @@ void main() {
         from: 'Portal Occidente',
         to: 'Universidad Sur',
         description: 'Ruta alimentadora.',
-        stops: const ['Portal Occidente', 'Av 80', 'Estadio', 'Universidad Sur'],
+        stops: const [
+          'Portal Occidente',
+          'Av 80',
+          'Estadio',
+          'Universidad Sur',
+        ],
       ),
     ];
 
@@ -117,4 +125,3 @@ void main() {
     expect(route?.isFavorite, isFalse);
   });
 }
-
