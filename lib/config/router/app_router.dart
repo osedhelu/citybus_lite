@@ -44,6 +44,8 @@ final List<_RouteConfig> _routeConfigs = [
       icon: const Icon(Icons.arrow_back),
       onPressed: () => context.go(HomeRoute.path),
     ),
+    trailingBuilder: (context) => null,
+    matches: (location) => location.startsWith('/routes/'),
   ),
   _RouteConfig(
     path: _loadingRoutePath,
@@ -109,6 +111,7 @@ class _RouteConfig {
     required this.builder,
     this.leadingBuilder,
     this.trailingBuilder,
+    this.matches,
   });
 
   final String path;
@@ -116,6 +119,7 @@ class _RouteConfig {
   final _RouteBuilder builder;
   final RouteButtonBuilder? leadingBuilder;
   final RouteButtonBuilder? trailingBuilder;
+  final bool Function(String location)? matches;
 
   GoRoute toRoute() => GoRoute(path: path, name: name, builder: builder);
 }
@@ -132,7 +136,10 @@ _RouteConfig? _findRouteConfig(String location) {
   final path = Uri.tryParse(location)?.path ?? location;
 
   for (final config in _routeConfigs) {
-    if (config.path == path) {
+    if (config.matches != null) {
+      final matches = config.matches!(path);
+      if (matches) return config;
+    } else if (config.path == path) {
       return config;
     }
   }
